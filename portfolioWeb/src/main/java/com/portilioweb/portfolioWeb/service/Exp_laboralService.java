@@ -6,8 +6,9 @@ import com.portilioweb.portfolioWeb.model.Exp_laboral;
 import com.portilioweb.portfolioWeb.repository.Exp_laboralRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class Exp_laboralService implements IExp_laboralService{
 
     @Autowired

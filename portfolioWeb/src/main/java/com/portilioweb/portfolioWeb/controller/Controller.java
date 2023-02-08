@@ -18,17 +18,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
-    
+    @Autowired
+    private IEducacionService eduServ;
     @Autowired
     private IPersonaService persoServ;
-    private IEducacionService eduServ;
+    @Autowired
     private IExp_laboralService expServ;
+    @Autowired
     private IProyectoService proyServ;
+    @Autowired
     private ISkillsService skillServ;
     
     //////////////Persona//////////////
@@ -43,8 +47,8 @@ public class Controller {
        return persoServ.verPersona();
     }
     
-    @GetMapping ("/borrar/persona/{id}")
-    public void borrarPersona (@PathVariable Long id){
+    @GetMapping ("/borrar/persona")
+    public void borrarPersona (@RequestParam Long id){
         persoServ.borrarPersona(id);
     }
     
@@ -65,15 +69,15 @@ public class Controller {
        return eduServ.verEducacion();
     }
     
-    @GetMapping ("/borrar/educacion/{id}")
-    public void borrarEducacion (@PathVariable Long id){
+    @GetMapping ("/borrar/educacion")
+    public void borrarEducacion (@RequestParam Long id){
         eduServ.borrarEducacion(id);
     }
     
     @PutMapping ("/modificar/educacion")
     public void modificarEducacion(@RequestBody Educacion edu){
         eduServ.modificarEducacion(edu);
-    }
+    } 
     
     //////////////Experiencia Laboral//////////////
     
@@ -88,8 +92,8 @@ public class Controller {
        return expServ.verExp_laboral();
     }
     
-    @GetMapping ("/borrar/exp_laboral/{id}")
-    public void borrarExp_laboral (@PathVariable Long id){
+    @GetMapping ("/borrar/exp_laboral")
+    public void borrarExp_laboral (@RequestParam Long id){
         expServ.borrarExp_laboral(id);
     }
     
@@ -110,8 +114,8 @@ public class Controller {
        return proyServ.verProyecto();
     }
     
-    @GetMapping ("/borrar/proyecto/{id}")
-    public void borrarProyecto (@PathVariable Long id){
+    @GetMapping ("/borrar/proyecto")
+    public void borrarProyecto (@RequestParam Long id){
         proyServ.borrarProyecto(id);
     }
     
@@ -132,8 +136,8 @@ public class Controller {
        return skillServ.verSkills();
     }
     
-    @GetMapping ("/borrar/skill/{id}")
-    public void borrarSkill (@PathVariable Long id){
+    @GetMapping ("/borrar/skill")
+    public void borrarSkill (@RequestParam Long id){
         skillServ.borrarSkill(id);
     }
     

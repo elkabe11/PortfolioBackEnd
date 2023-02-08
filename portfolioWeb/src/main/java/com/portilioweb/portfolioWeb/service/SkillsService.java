@@ -5,8 +5,9 @@ import com.portilioweb.portfolioWeb.model.Skills;
 import com.portilioweb.portfolioWeb.repository.SkillsRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class SkillsService implements ISkillsService{
 
     

@@ -5,8 +5,9 @@ import com.portilioweb.portfolioWeb.model.Educacion;
 import com.portilioweb.portfolioWeb.repository.EducacionRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class EducacionService implements IEducacionService{
     
     @Autowired
